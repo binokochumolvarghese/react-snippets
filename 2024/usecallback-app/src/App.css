@@ -1,0 +1,17 @@
+.wrapper{ 
+  display:flex;
+}
+
+.green-box {
+  width: 300px;
+  border: 5px solid green;
+  padding: 50px;
+  margin: 20px; 
+}
+
+.red-box {
+  width: 300px;
+  border: 5px solid red;
+  padding: 50px;
+  margin: 20px;
+}
