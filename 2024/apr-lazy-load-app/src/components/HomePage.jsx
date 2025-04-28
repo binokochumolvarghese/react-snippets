@@ -1,25 +1,30 @@
-import { Suspense, lazy, useState } from "react";
-import Loading from "./Loading";
+import { Suspense, lazy, useState } from "react"; 
+import Loading from "./Loading"; 
 
-const LoadingPage = lazy(() => import ("./LoadingPage"));
+// Dynamically import the `LoadingPage` component. This delays the loading of this component until it's needed.
+const LoadingPage = lazy(() => import("./LoadingPage")); 
 
-export default function HomePage() {
-  const [clicked, setClicked] = useState(false);
 
-  function btnClickHandler() {
-    setClicked(!clicked);
+export default function HomePage() { 
+  const [clicked, setClicked] = useState(false); 
+
+  function btnClickHandler() { 
+    setClicked(!clicked); 
   }
 
+  // Use React's Suspense to handle lazy loading. While `LoadingPage` is being loaded, show the `Loading` component.
   return (
     <>
-      <h2>Home page</h2>
-      <button onClick={btnClickHandler}>Click here</button>
+      <h2>Home page</h2> 
+      <button onClick={btnClickHandler}>Click here</button> 
 
-      {clicked && (
-        <Suspense fallback={<Loading />}>
-          <LoadingPage />
+      {clicked && ( 
+        <Suspense fallback={<Loading />}> 
+          <LoadingPage /> 
         </Suspense>
       )}
     </>
   );
 }
+
+

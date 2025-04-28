@@ -26,7 +26,7 @@ export default function LoadingPage() {
         <>
         <h2>Loaded Notes</h2>
         {
-            todos.slice(0,10).map((todo, index) => ( 
+            todos.slice(0,100).map((todo, index) => ( 
                 <div key={index}>
                     <p>{todo.id} {todo.title}</p> 
                 </div>
